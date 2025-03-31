@@ -19,6 +19,7 @@ This week, we began working on load forecasting using smart meter data from a ga
 ## 📊 Data Preprocessing & Active Power Visualization
 
 This week, we focused on **preprocessing the electrical load data** collected from the smart meter at the garment factory in Valelevu, Suva. The main goal was to clean and prepare the dataset for modeling, while beginning to explore the relationship between time and active power consumption.
+https://github.com/Niraj-Nair/EE461-blogs/blob/main/active%20power.png?raw=true
 
 ### 📈 Visualization:
 We created a **scatter plot** of **active power** over time to identify usage patterns. This helped us observe:
