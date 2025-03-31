@@ -59,6 +59,34 @@ title('Phase Currents Over Time');
 legend('A1', 'A2', 'A3');
 grid on;
 ```
-
+## Addressing missing data from currents 
+```
+% Remove rows with any missing data
+ LoadDataset = rmmissing(LoadDataset);
+ % Ensure time_data is in datetime format
+ time_data = datetime(LoadDataset.Datetime);
+ % Extract currents
+ A1 = LoadDataset.A1;
+ A2 = LoadDataset.A2;
+ A3 = LoadDataset.A3;
+ % Remove outliers (values beyond 1.5*IQR)
+ A1 = filloutliers(A1, 'previous');
+ A2 = filloutliers(A2, 'previous');
+ A3 = filloutliers(A3, 'previous');
+ % Plot currents
+ 11
+figure;
+ plot(time_data, A1, 'r', 'LineWidth', 1.5); hold on;
+ plot(time_data, A2, 'g', 'LineWidth', 1.5);
+ plot(time_data, A3, 'b', 'LineWidth', 1.5);
+ hold off;
+ % Labels & legend
+ xlabel('Time'); ylabel('Current (A)');
+ title('Cleaned Phase Currents Over Time');
+ legend('A1', 'A2', 'A3');
+ grid on
+```
+## Shows the cleaned plot of the three phase currents 
+![cleaned currents](https://github.com/user-attachments/assets/0e1730b7-9300-463d-b5cf-894743f9f17d)
 
 
