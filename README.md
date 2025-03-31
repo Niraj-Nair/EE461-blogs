@@ -37,7 +37,7 @@ xlabel('Time');
 ylabel('Active Power (kWh)');
 title('Scatter Plot of Active Power Over Time');
 grid on;
-
+![Active Power Scatter Plot](active%20power.png)
 
 
 
