@@ -36,8 +36,8 @@ scatter(time_data, active_power, 'b', 'filled'); % Blue filled dots
 xlabel('Time');
 ylabel('Active Power (kWh)');
 title('Scatter Plot of Active Power Over Time');
-grid on; ```
-
+grid on;
+```
 ## 🔌 Week 6: Visualizing Three-Phase Currents Over Time
 
 These plots help us understand:
@@ -46,7 +46,7 @@ These plots help us understand:
 - The **pattern of current usage** throughout working hours
 ![phase currents](https://github.com/user-attachments/assets/9aab74d5-d9b8-4713-a8c7-331b597150ec)
 
-% Plot currents
+```% Plot currents
 figure;
 plot(time_data, A1, 'r', 'LineWidth', 1.5); hold on;
 plot(time_data, A2, 'g', 'LineWidth', 1.5);
@@ -58,7 +58,7 @@ xlabel('Time'); ylabel('Current (A)');
 title('Phase Currents Over Time');
 legend('A1', 'A2', 'A3');
 grid on;
-
+```
 
 
 
