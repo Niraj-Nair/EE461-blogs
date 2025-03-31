@@ -38,9 +38,26 @@ ylabel('Active Power (kWh)');
 title('Scatter Plot of Active Power Over Time');
 grid on;
 
+## 🔌 Week 6: Visualizing Three-Phase Currents Over Time
 
+These plots help us understand:
+- **How electrical load varies across all three phases**
+- Whether there is any **imbalance** in current distribution
+- The **pattern of current usage** throughout working hours
+![phase currents](https://github.com/user-attachments/assets/9aab74d5-d9b8-4713-a8c7-331b597150ec)
 
-    ![active power](https://github.com/user-attachments/assets/76d2e883-3d78-4286-8ea9-dc8d396d69e2)
+% Plot currents
+figure;
+plot(time_data, A1, 'r', 'LineWidth', 1.5); hold on;
+plot(time_data, A2, 'g', 'LineWidth', 1.5);
+plot(time_data, A3, 'b', 'LineWidth', 1.5);
+hold off;
+
+% Labels & legend
+xlabel('Time'); ylabel('Current (A)');
+title('Phase Currents Over Time');
+legend('A1', 'A2', 'A3');
+grid on;
 
 
 
