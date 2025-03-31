@@ -36,7 +36,7 @@ scatter(time_data, active_power, 'b', 'filled'); % Blue filled dots
 xlabel('Time');
 ylabel('Active Power (kWh)');
 title('Scatter Plot of Active Power Over Time');
-grid on;
+grid on; ```
 
 ## 🔌 Week 6: Visualizing Three-Phase Currents Over Time
 
