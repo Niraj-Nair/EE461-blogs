@@ -16,8 +16,35 @@ This week, we began working on load forecasting using smart meter data from a ga
 - Start with data preprocessing
 - Clean and normalize the dataset
 
+## 📊 Data Preprocessing & Active Power Visualization
 
----
+This week, we focused on **preprocessing the electrical load data** collected from the smart meter at the garment factory in Valelevu, Suva. The main goal was to clean and prepare the dataset for modeling, while beginning to explore the relationship between time and active power consumption.
 
-Stay tuned for next week's update!
+### 📈 Visualization:
+We created a **scatter plot** of **active power** over time to identify usage patterns. This helped us observe:
+- Peak usage hours during the day (mostly between 8am–5pm)
+- Sudden spikes in power usage (possibly during machine start-ups)
+- Flat or low-usage periods (before or after working hours)
+### 📈 Scatter Plot of Active Power Over Time
+
+We used MATLAB to create a scatter plot showing how active energy consumption increased from **July 2023 to March 2025**.
+
+```matlab
+% Create scatter plot
+figure;
+scatter(time_data, active_power, 'b', 'filled'); % Blue filled dots
+xlabel('Time');
+ylabel('Active Power (kWh)');
+title('Scatter Plot of Active Power Over Time');
+grid on;
+
+![image](https://github.com/user-attachments/assets/060d80bc-be8e-45c9-8146-1468ecd1fbe4)
+
+
+
+```markdown
+![Active Power Scatter Plot](images/active_power_scatter.png)
+
+
+
 
