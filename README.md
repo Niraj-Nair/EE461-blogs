@@ -39,10 +39,7 @@ title('Scatter Plot of Active Power Over Time');
 grid on;
 ![Active Power Scatter Plot](active%20power.png)
 
-
-
-```markdown
-![Active Power Scatter Plot](images/active_power_scatter.png)
+https://github.com/Niraj-Nair/EE461-blogs/blob/main/active%20power.png?raw=true
 
 
 
