@@ -143,3 +143,4 @@ for i = 1:length(varNames)
     pause(0.5);  % Optional pause to ensure rendering
 end
 ```
+When working with real-world power load datasets—like those collected from smart meters or industrial monitoring systems—it's crucial to clean and prepare the data before diving into analysis. In this post, we’ll walk through a practical MATLAB script that does just that: it removes missing values, filters out outliers, standardizes the data, and then visualizes each parameter over time.
