@@ -90,5 +90,19 @@ figure;
 ![cleaned currents](https://github.com/user-attachments/assets/0e1730b7-9300-463d-b5cf-894743f9f17d)
 
 # EE461 Project Blog: Week 7-8
+```
+PLOT ALL RAW VARIABLES TO VIZUALIZE THE GRAPHS
+% Step 1: Get variable names except the first column (Datetime)
+varNames = LoadDataset.Properties.VariableNames(2:end);
 
+% Step 2: Loop through each variable and plot
+for i = 1:length(varNames)
+    figure;
+    plot(LoadDataset.Datetime, LoadDataset.(varNames{i}), 'LineWidth', 1.2);
+    title(['Plot of ', varNames{i}, ' over Time']);
+    xlabel('Time');
+    ylabel(varNames{i});
+    grid on;
+end
+```
 
