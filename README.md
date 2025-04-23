@@ -250,4 +250,51 @@ The PCA biplot revealed that Active Power and Currents dominate PC1, while Volta
 ![pca biplot](https://github.com/user-attachments/assets/b406fa0e-6d27-4d70-b630-665f66655bf7)
 ![pca 3d](https://github.com/user-attachments/assets/ab0f1d2b-5a23-44d8-9440-9c9553df09d5)
 
+## 🛠️ Feature Engineering
+We created new features that capture time patterns and power behavior:
 
+Hour of the day: To track daily usage trends
+
+Day of the week: To observe weekly demand patterns
+
+Total current: Combined current from all three phases
+
+Lag feature: Active power from the previous time step
+
+Rolling average: Smoothed average of active power over 3 time steps
+
+Target variable: Active power one step ahead (for supervised learning)
+
+These features help the model understand when and how much power is typically used.
+
+## 📈 Feature Exploration
+We removed rows with missing values (caused by lag/rolling calculations) and then explored the relationships between the engineered features.
+
+✅ Summary Statistics
+Hour ranged from 0 to 23, confirming coverage across the day
+
+Total current peaked at over 890 A, highlighting some heavy usage spikes
+
+Rolling averages and lag features were aligned closely with current power behavior
+
+🔍 Correlation Matrix
+We analyzed correlations to find the most predictive features.
+
+Highlights:
+
+Lag features and rolling averages were highly correlated with current power
+
+Hour showed a weak to moderate correlation, which is still useful for pattern learning
+
+Current total had a strong positive correlation with power-related features
+
+A heatmap helped visualize these relationships quickly.
+
+## 📊 Visualizations
+We used several plots to inspect feature behavior:
+
+Pairwise scatter plots showed strong linear relationships between power, current, and engineered features
+
+Boxplots highlighted value ranges and helped spot potential outliers
+
+Histograms revealed the distribution of each feature — useful for deciding on scaling or transformations
