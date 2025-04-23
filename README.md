@@ -1,4 +1,4 @@
-![pca biplot](https://github.com/user-attachments/assets/db280500-078f-4bda-9f9b-a8cd76119ead)
+
 # EE461 Project Blog: AI-Based Load Forecasting
 
 ## 📅 Week 6: Project Introduction
