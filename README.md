@@ -213,3 +213,36 @@ Helped us understand how these core features interact
 Suggested phase-wise differences in current draw
 
 Revealed nonlinear relationships that may benefit from advanced ML models (like SVM or neural networks)
+
+## 📈 Correlation Analysis
+We began by calculating the correlation matrix for all numeric features (excluding Datetime). A heatmap was then used to visualize the strength and direction of these relationships.
+
+Key Findings:
+
+Active Power had a very strong positive correlation with all three current phases (L1–L3), especially CurrentL2 (0.9949), indicating current values are reliable predictors of power consumption.
+
+Voltage values were positively correlated among themselves, but negatively correlated with both current and active power — typical behavior in power systems.
+
+This analysis confirmed that Voltage and Current behave inversely, especially under high loads, aligning with expected electrical theory.
+
+![Correlation Heatmap Placeholder]
+
+## 🧠 Principal Component Analysis (PCA)
+To simplify the dataset while retaining most of its variance, we applied PCA on the standardized numeric features.
+
+Steps Taken:
+
+Standardized the data using z-score normalization
+
+Applied MATLAB’s pca() function to extract principal components
+
+Generated visualizations for variance, score plots, and feature contributions
+
+🔍 Key Insights:
+PC1 and PC2 together explained over 99% of the total variance, indicating that the dataset is highly compressible
+
+The Pareto chart helped us understand how much variance each principal component contributed
+
+2D and 3D PCA plots showed clear structure and separability in the data
+
+The PCA biplot revealed that Active Power and Currents dominate PC1, while Voltage variables contributed more toward PC2
