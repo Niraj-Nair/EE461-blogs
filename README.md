@@ -145,4 +145,7 @@ for i = 1:length(varNames)
 end
 ```
 # plot the cleaned data 
+![image](https://github.com/user-attachments/assets/f4473857-0353-4f9a-b6eb-b2d1daea77ce)
+![c voltahe v1](https://github.com/user-attachments/assets/9c201c07-0a5b-425b-855f-feef4952541d)
 
+![c current ](https://github.com/user-attachments/assets/8a4afd58-900e-4a97-b496-0af35ff4b4bc)
