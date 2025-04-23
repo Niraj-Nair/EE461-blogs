@@ -113,3 +113,33 @@ end
 ![image](https://github.com/user-attachments/assets/8d49bdf1-5f29-4cce-820c-c5950450e24a)
 ![image](https://github.com/user-attachments/assets/00279e88-dcdf-4dfb-b15e-904032b6f34a)
 
+```
+%% Step 1: Remove rows with missing values
+cleanData = rmmissing(LoadDataset)
+%% Step 2: Extract numeric data (exclude the Datetime column)
+numericData = cleanData{:, 2:end}
+%% Step 3: Standardize the numeric values (z-score)
+standardizedData = zscore(numericData)
+%% Step 4: Remove outliers (keep rows where all z-scores are between -3 and +3)
+noOutliersIdx = all(abs(standardizedData) <= 3, 2);
+finalData = cleanData(noOutliersIdx, :)
+%% Step 0: Rename columns correctly (based on your dataset)
+finalData.Properties.VariableNames = { ...
+    'Datetime', 'ActivePower', 'VoltageL1', 'VoltageL2', 'VoltageL3', ...
+    'CurrentL1', 'CurrentL2', 'CurrentL3'};
+
+%% Step 1: Get variable names (excluding 'Datetime')
+varNames = finalData.Properties.VariableNames(2:end);
+
+%% Step 2: Loop through and plot each variable
+for i = 1:length(varNames)
+    figure;
+    plot(finalData.Datetime, finalData{:, varNames{i}}, 'LineWidth', 1.2);
+    title(['Cleaned Plot of ', varNames{i}, ' over Time']);
+    xlabel('Time');
+    ylabel(varNames{i});
+    grid on;
+    drawnow;
+    pause(0.5);  % Optional pause to ensure rendering
+end
+```
