@@ -89,7 +89,7 @@ figure;
 ## Shows the cleaned plot of the three phase currents 
 ![cleaned currents](https://github.com/user-attachments/assets/0e1730b7-9300-463d-b5cf-894743f9f17d)
 
-# EE461 Project Blog: Week 7-8
+# 📅EE461 Project Blog: Week 7-8
 ```
 PLOT ALL RAW VARIABLES TO VIZUALIZE THE GRAPHS
 % Step 1: Get variable names except the first column (Datetime)
@@ -144,8 +144,19 @@ for i = 1:length(varNames)
     pause(0.5);  % Optional pause to ensure rendering
 end
 ```
-# plot the cleaned data 
+# ✅plot the cleaned data 
 ![image](https://github.com/user-attachments/assets/f4473857-0353-4f9a-b6eb-b2d1daea77ce)
 ![c voltahe v1](https://github.com/user-attachments/assets/9c201c07-0a5b-425b-855f-feef4952541d)
 
 ![c current ](https://github.com/user-attachments/assets/8a4afd58-900e-4a97-b496-0af35ff4b4bc)
+🔍 Visualizing the Cleaned Power Load Data
+Once the dataset was cleaned and outliers were removed, we visualized the key electrical parameters — Active Power, Voltage (L1, L2, L3), and Current (L1, L2, L3) — to better understand how the system performed over time.
+
+⚡ Active Power Trends
+The plot of Active Power over time shows a dynamic and fluctuating load profile across the entire observation period. While most values remain within a high range, there are clear dips in power consumption — likely due to low-demand periods or operational shutdowns. The cleaned plot provides a more accurate reflection of real usage patterns, making it suitable for further forecasting or energy management analysis.
+
+🔌 Voltage Stability
+All three phase voltages (VoltageL1, VoltageL2, VoltageL3) remained relatively stable, hovering around the 250V mark, which indicates a healthy supply system. The one noticeable dip around early 2024 could be attributed to a brief fault or sensor issue, but otherwise, the data shows no major signs of voltage instability.
+
+⚙️ Current Load Behavior
+The current values (CurrentL1, CurrentL2, CurrentL3) followed expected patterns, with minor variations between the three phases. The cleaned data ensures that any extreme or faulty readings have been removed, allowing us to clearly observe how the load is distributed across the phases. This is important for detecting phase imbalance, which can affect equipment performance and power quality.
