@@ -89,4 +89,6 @@ figure;
 ## Shows the cleaned plot of the three phase currents 
 ![cleaned currents](https://github.com/user-attachments/assets/0e1730b7-9300-463d-b5cf-894743f9f17d)
 
+# EE461 Project Blog: Week 7-8
+
 
