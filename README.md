@@ -161,3 +161,55 @@ All three phase voltages (VoltageL1, VoltageL2, VoltageL3) remained relatively s
 
 ⚙️ Current Load Behavior
 The current values (CurrentL1, CurrentL2, CurrentL3) followed expected patterns, with minor variations between the three phases. The cleaned data ensures that any extreme or faulty readings have been removed, allowing us to clearly observe how the load is distributed across the phases. This is important for detecting phase imbalance, which can affect equipment performance and power quality.
+
+## Secondary Exploration Data Analysis 
+After cleaning the dataset, we dove into exploratory data analysis (EDA) to better understand the behavior and relationships between key electrical features—namely active power, voltage (L1–L3), and current (L1–L3). These insights will help us in later modeling steps like feature extraction and forecasting.
+
+📌 Summary Statistics
+We started with basic summary statistics to get a feel for the data range and distribution.
+
+Datetime entries span from July 2023 to March 2025, providing a solid timeline for time series forecasting.
+
+Active Power ranges from 0 to 106 kW, with a median of 5 kW.
+
+Voltage across all three lines (L1, L2, L3) is fairly consistent, centered around 252–254 V.
+
+Current values are more variable, with maximums reaching over 300 A on some phases, hinting at high load demands.
+
+🔍 Pairwise Scatter Plots
+We generated pairwise scatter plots to observe relationships between all combinations of features.
+This helped in identifying:
+
+Correlations, such as between voltage and current
+
+Clusters or outliers, which may influence model training later
+
+Linear or nonlinear patterns, which guide model selection
+
+📦 Boxplots
+Boxplots provided a quick visual for spotting:
+
+Skewed distributions
+
+Outliers that were missed during z-score filtering
+
+Comparison of feature ranges (e.g., Voltage vs Current)
+
+📈 Histograms
+Histograms showed the distribution shape of each variable:
+
+Some features like voltage had a narrow, symmetrical spread
+
+Others like current had right-skewed distributions, showing occasional high spikes in load
+
+These insights are useful for normalizing and selecting proper transformations before modeling.
+
+🔺 3D Scatter Plots
+We visualized Active Power vs. Voltage vs. Current in 3D scatter plots for each phase (L1, L2, L3).
+These plots:
+
+Helped us understand how these core features interact
+
+Suggested phase-wise differences in current draw
+
+Revealed nonlinear relationships that may benefit from advanced ML models (like SVM or neural networks)
