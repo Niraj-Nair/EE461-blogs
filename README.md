@@ -165,7 +165,7 @@ The current values (CurrentL1, CurrentL2, CurrentL3) followed expected patterns,
 ## Secondary Exploration Data Analysis 
 After cleaning the dataset, we dove into exploratory data analysis (EDA) to better understand the behavior and relationships between key electrical features—namely active power, voltage (L1–L3), and current (L1–L3). These insights will help us in later modeling steps like feature extraction and forecasting.
 
-📌 Summary Statistics
+## 📌Summary Statistics
 We started with basic summary statistics to get a feel for the data range and distribution.
 
 Datetime entries span from July 2023 to March 2025, providing a solid timeline for time series forecasting.
@@ -176,7 +176,7 @@ Voltage across all three lines (L1, L2, L3) is fairly consistent, centered aroun
 
 Current values are more variable, with maximums reaching over 300 A on some phases, hinting at high load demands.
 
-🔍 Pairwise Scatter Plots
+## 🔍 Pairwise Scatter Plots
 We generated pairwise scatter plots to observe relationships between all combinations of features.
 This helped in identifying:
 
@@ -186,7 +186,7 @@ Clusters or outliers, which may influence model training later
 
 Linear or nonlinear patterns, which guide model selection
 
-📦 Boxplots
+## 📦 Boxplots
 Boxplots provided a quick visual for spotting:
 
 Skewed distributions
@@ -195,7 +195,7 @@ Outliers that were missed during z-score filtering
 
 Comparison of feature ranges (e.g., Voltage vs Current)
 
-📈 Histograms
+## 📈 Histograms
 Histograms showed the distribution shape of each variable:
 
 Some features like voltage had a narrow, symmetrical spread
@@ -204,7 +204,7 @@ Others like current had right-skewed distributions, showing occasional high spik
 
 These insights are useful for normalizing and selecting proper transformations before modeling.
 
-🔺 3D Scatter Plots
+## 🔺 3D Scatter Plots
 We visualized Active Power vs. Voltage vs. Current in 3D scatter plots for each phase (L1, L2, L3).
 These plots:
 
