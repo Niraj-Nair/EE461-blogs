@@ -144,4 +144,5 @@ for i = 1:length(varNames)
     pause(0.5);  % Optional pause to ensure rendering
 end
 ```
+# plot the cleaned data 
 
