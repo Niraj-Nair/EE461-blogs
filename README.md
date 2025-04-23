@@ -1,3 +1,4 @@
+![pca biplot](https://github.com/user-attachments/assets/db280500-078f-4bda-9f9b-a8cd76119ead)
 # EE461 Project Blog: AI-Based Load Forecasting
 
 ## 📅 Week 6: Project Introduction
@@ -246,3 +247,7 @@ The Pareto chart helped us understand how much variance each principal component
 2D and 3D PCA plots showed clear structure and separability in the data
 
 The PCA biplot revealed that Active Power and Currents dominate PC1, while Voltage variables contributed more toward PC2
+![pca biplot](https://github.com/user-attachments/assets/b406fa0e-6d27-4d70-b630-665f66655bf7)
+![pca 3d](https://github.com/user-attachments/assets/ab0f1d2b-5a23-44d8-9440-9c9553df09d5)
+
+
