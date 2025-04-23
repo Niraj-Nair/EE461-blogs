@@ -105,4 +105,5 @@ for i = 1:length(varNames)
     grid on;
 end
 ```
+![image](https://github.com/user-attachments/assets/2fdbbb4d-0c4c-4b3e-ae5e-d0d9917abfe4)
 
