@@ -298,3 +298,99 @@ Pairwise scatter plots showed strong linear relationships between power, current
 Boxplots highlighted value ranges and helped spot potential outliers
 
 Histograms revealed the distribution of each feature — useful for deciding on scaling or transformations
+## WEEK 9 Blog update
+⚡ Choosing the Right Model for Mid-Term Load Forecasting
+When working on energy forecasting, picking the right model can make a big difference—especially for mid-term load forecasting, which focuses on predicting electricity demand over the next few days or weeks. In my project, I'm using smart meter data from a garment factory in Valelevu, Suva, and my goal is to find the most accurate and practical models for mid-range prediction.
+
+So, what models are out there, and which ones work best for mid-term timeframes? Here’s what I’ve explored so far:
+
+🔁 SARIMA – The Seasonal Time Series Classic
+SARIMA (Seasonal Autoregressive Integrated Moving Average) is an extended version of ARIMA that handles seasonality. It works really well when your data shows consistent daily or weekly cycles.
+
+🟢 What I liked:
+
+Handles trend and seasonality well.
+
+Good for stable and repeating patterns.
+
+🔴 Drawbacks:
+
+Requires manual parameter tuning.
+
+Assumes relationships in data are linear.
+
+👉 Best for data with predictable patterns and regular fluctuations.
+
+📅 Facebook Prophet – Forecasting Made Easy
+Prophet, developed by Facebook, is surprisingly easy to use. You just feed in your time series, and it takes care of trend, seasonality, and even holiday effects. For mid-term forecasting, especially when your load varies slightly over time, Prophet does a solid job.
+
+🟢 What I liked:
+
+Automatically detects trends and seasonality.
+
+Handles missing data and outliers well.
+
+🔴 Drawbacks:
+
+Doesn’t do great with highly erratic data.
+
+Less customizable for advanced users.
+
+👉 Great choice for business-level forecasts and mid-term planning.
+
+🤖 Support Vector Regression (SVR) – For Complex Patterns
+SVR is a machine learning model that can capture nonlinear patterns in data. I used it with engineered features like day of the week and previous load values, and it gave fairly good results.
+
+🟢 What I liked:
+
+Captures nonlinear behavior better than traditional models.
+
+Works well for mid-sized datasets.
+
+🔴 Drawbacks:
+
+Needs a lot of preprocessing and tuning.
+
+Slower when working with large volumes of data.
+
+👉 Ideal when load doesn’t follow simple patterns.
+
+🌳 Random Forest – Simple Yet Powerful
+Random Forest isn’t a time series model by default, but with proper feature engineering (like lag values, day type, etc.), it can be quite effective for forecasting. It’s also less sensitive to noisy data.
+
+🟢 What I liked:
+
+Robust and flexible.
+
+Doesn’t overfit easily.
+
+🔴 Drawbacks:
+
+Doesn’t inherently understand sequence or time dependencies.
+
+Needs careful feature selection.
+
+👉 Works well with clean, structured input data and meaningful features.
+
+🧠 LSTM – The Deep Learning Powerhouse
+LSTM (Long Short-Term Memory) is a type of neural network designed for sequence data. It's capable of learning long-term dependencies in your data—perfect for when energy usage patterns are complicated or irregular.
+
+🟢 What I liked:
+
+Handles sequences and long-term trends well.
+
+Adapts to nonlinear and dynamic data.
+
+🔴 Drawbacks:
+
+Takes time and computing power to train.
+
+Not easy to interpret or explain.
+
+👉 Use it when you have plenty of data and want cutting-edge accuracy.
+
+🧪 My Ongoing Experiments
+Right now, I’m testing SARIMA, Prophet, Random Forest, and LSTM on my dataset and comparing their performance using metrics like RMSE (Root Mean Squared Error) and MAE (Mean Absolute Error). For mid-term forecasting, early results suggest Prophet and Random Forest are striking a good balance between simplicity and accuracy.
+
+📌 Final Thoughts
+Each model has its own strengths depending on the nature of your dataset. For mid-term load forecasting, models that balance seasonality detection, flexibility, and accuracy—like Prophet, SARIMA, and Random Forest—are often the best place to start. LSTM is powerful, but might be overkill unless you’re dealing with highly complex or large-scale data.
