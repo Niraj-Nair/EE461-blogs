@@ -389,8 +389,4 @@ Not easy to interpret or explain.
 
 👉 Use it when you have plenty of data and want cutting-edge accuracy.
 
-🧪 My Ongoing Experiments
-Right now, I’m testing SARIMA, Prophet, Random Forest, and LSTM on my dataset and comparing their performance using metrics like RMSE (Root Mean Squared Error) and MAE (Mean Absolute Error). For mid-term forecasting, early results suggest Prophet and Random Forest are striking a good balance between simplicity and accuracy.
 
-📌 Final Thoughts
-Each model has its own strengths depending on the nature of your dataset. For mid-term load forecasting, models that balance seasonality detection, flexibility, and accuracy—like Prophet, SARIMA, and Random Forest—are often the best place to start. LSTM is powerful, but might be overkill unless you’re dealing with highly complex or large-scale data.
