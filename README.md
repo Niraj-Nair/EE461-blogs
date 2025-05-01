@@ -304,7 +304,7 @@ When working on energy forecasting, picking the right model can make a big diffe
 
 So, what models are out there, and which ones work best for mid-term timeframes? Here’s what I’ve explored so far:
 
-🔁 SARIMA – The Seasonal Time Series Classic
+## 🔁 SARIMA – The Seasonal Time Series Classic
 SARIMA (Seasonal Autoregressive Integrated Moving Average) is an extended version of ARIMA that handles seasonality. It works really well when your data shows consistent daily or weekly cycles.
 
 🟢 What I liked:
@@ -321,7 +321,7 @@ Assumes relationships in data are linear.
 
 👉 Best for data with predictable patterns and regular fluctuations.
 
-📅 Facebook Prophet – Forecasting Made Easy
+## 📅 Facebook Prophet – Forecasting Made Easy
 Prophet, developed by Facebook, is surprisingly easy to use. You just feed in your time series, and it takes care of trend, seasonality, and even holiday effects. For mid-term forecasting, especially when your load varies slightly over time, Prophet does a solid job.
 
 🟢 What I liked:
@@ -338,7 +338,7 @@ Less customizable for advanced users.
 
 👉 Great choice for business-level forecasts and mid-term planning.
 
-🤖 Support Vector Regression (SVR) – For Complex Patterns
+## 🤖 Support Vector Regression (SVR) – For Complex Patterns
 SVR is a machine learning model that can capture nonlinear patterns in data. I used it with engineered features like day of the week and previous load values, and it gave fairly good results.
 
 🟢 What I liked:
@@ -355,7 +355,7 @@ Slower when working with large volumes of data.
 
 👉 Ideal when load doesn’t follow simple patterns.
 
-🌳 Random Forest – Simple Yet Powerful
+## 🌳 Random Forest – Simple Yet Powerful
 Random Forest isn’t a time series model by default, but with proper feature engineering (like lag values, day type, etc.), it can be quite effective for forecasting. It’s also less sensitive to noisy data.
 
 🟢 What I liked:
@@ -372,7 +372,7 @@ Needs careful feature selection.
 
 👉 Works well with clean, structured input data and meaningful features.
 
-🧠 LSTM – The Deep Learning Powerhouse
+## 🧠 LSTM – The Deep Learning Powerhouse
 LSTM (Long Short-Term Memory) is a type of neural network designed for sequence data. It's capable of learning long-term dependencies in your data—perfect for when energy usage patterns are complicated or irregular.
 
 🟢 What I liked:
