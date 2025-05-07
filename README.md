@@ -1,6 +1,6 @@
 
 # EE461 Project Blog: AI-Based Load Forecasting
-
+ 
 ## 📅 Week 6: Project Introduction
 
 This week, we began working on load forecasting using smart meter data from a garment factory in Valelevu, Suva. The main objectives were to:
