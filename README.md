@@ -354,8 +354,14 @@ Figure 13: A combined plot compared all models visually.
 
 The GBRT model’s green line almost perfectly follows actual load (black line), especially during test data—confirming it as our best model.
 
+![combined forcast ](https://github.com/user-attachments/assets/06318d27-ce3a-4133-b437-cacf8e0ade5b)
+![linear regression ](https://github.com/user-attachments/assets/9061ed73-90aa-4349-8f75-80a051013766)
+![gbrt ](https://github.com/user-attachments/assets/3aec48fa-207d-4474-9849-44e5a791476f)
+![svr](https://github.com/user-attachments/assets/6000e89f-5113-4630-b783-b4033fbb2a7e)
+
+
 ✅ Conclusion
-This project demonstrated how feature engineering, exploratory data analysis, and machine learning can be combined to build powerful load forecasting systems. Among all models, GBRT emerged as the most robust and accurate, making it ideal for real-world deployment in smart energy systems.
+This project demonstrated how feature engineering, exploratory data analysis, and machine learning can be combined to build powerful load forecasting systems. Among all models, GBRT and linear regression emerged as the most robust and accurate, making it ideal for real-world deployment in smart energy systems.
 
 
 
