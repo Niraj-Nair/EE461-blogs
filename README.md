@@ -298,95 +298,70 @@ Pairwise scatter plots showed strong linear relationships between power, current
 Boxplots highlighted value ranges and helped spot potential outliers
 
 Histograms revealed the distribution of each feature — useful for deciding on scaling or transformations
-## WEEK 9 Blog update
-⚡ Choosing the Right Model for Mid-Term Load Forecasting
-When working on energy forecasting, picking the right model can make a big difference—especially for mid-term load forecasting, which focuses on predicting electricity demand over the next few days or weeks. In my project, I'm using smart meter data from a garment factory in Valelevu, Suva, and my goal is to find the most accurate and practical models for mid-range prediction.
+## WEEK 9 and 10 Blog update
 
-So, what models are out there, and which ones work best for mid-term timeframes? Here’s what I’ve explored so far:
+🔋 Smarter Load Forecasting: How We Predicted Energy Demand Using ML
+⚙️ Introduction
+As energy systems become smarter and more dynamic, accurately predicting electrical load is crucial for efficiency and grid stability. In our EE461 project at USP, we explored load forecasting using feature engineering and three different machine learning models: Linear Regression (LR), Support Vector Regression (SVR), and Gradient Boosted Regression Trees (GBRT). Our goal was to forecast future power consumption based on smart meter time-series data.
 
-## 🔁 SARIMA – The Seasonal Time Series Classic
-SARIMA (Seasonal Autoregressive Integrated Moving Average) is an extended version of ARIMA that handles seasonality. It works really well when your data shows consistent daily or weekly cycles.
+🧠 Feature Engineering
+We engineered 16+ predictive features from raw voltage and current data including:
 
-🟢 What I liked:
+Rolling RMS of current phases (L1, L2, L3)
 
-Handles trend and seasonality well.
+Voltage imbalance and lag features
 
-Good for stable and repeating patterns.
+Current imbalance and its relative ratio
 
-🔴 Drawbacks:
+Mean and rolling values of active/reactive power
 
-Requires manual parameter tuning.
+Lag features of reactive power
 
-Assumes relationships in data are linear.
+These features were visualized using scatter plots, box plots, and histograms to understand data distribution, outliers, and patterns.
 
-👉 Best for data with predictable patterns and regular fluctuations.
+🔍 PCA & Correlation Analysis
+We used Principal Component Analysis (PCA) to reduce feature dimensionality. The first principal component alone explained 75% of the variance, highlighting strong correlation among features like CurrentL3, current_mean, and ActivePower.
 
-## 📅 Facebook Prophet – Forecasting Made Easy
-Prophet, developed by Facebook, is surprisingly easy to use. You just feed in your time series, and it takes care of trend, seasonality, and even holiday effects. For mid-term forecasting, especially when your load varies slightly over time, Prophet does a solid job.
+A correlation heatmap revealed which variables were strongly aligned. This helped us identify potential multicollinearity and focus on the most influential predictors.
 
-🟢 What I liked:
+🧪 Model Training & Testing
+We trained the following models using a 70/30 train-test split:
 
-Automatically detects trends and seasonality.
+Linear Regression (LR)
 
-Handles missing data and outliers well.
+Support Vector Regression (SVR)
 
-🔴 Drawbacks:
+Gradient Boosted Trees (GBRT)
 
-Doesn’t do great with highly erratic data.
+To evaluate performance, we used MAPE (Mean Absolute Percentage Error).
 
-Less customizable for advanced users.
+📉 Results:
+Model	MAPE (%)
+LR	0.00
+SVR	44.51
+GBRT	0.73
 
-👉 Great choice for business-level forecasts and mid-term planning.
+Linear Regression showed almost perfect performance—potentially a sign of overfitting or ideal feature-target alignment.
 
-## 🤖 Support Vector Regression (SVR) – For Complex Patterns
-SVR is a machine learning model that can capture nonlinear patterns in data. I used it with engineered features like day of the week and previous load values, and it gave fairly good results.
+SVR struggled with generalization in the test period, especially after Oct 2024.
 
-🟢 What I liked:
+GBRT balanced accuracy and generalization, performing best overall.
 
-Captures nonlinear behavior better than traditional models.
+📊 Visual Insights
+Figure 10–12: Plots show individual model predictions vs. actual load.
 
-Works well for mid-sized datasets.
+Figure 13: A combined plot compared all models visually.
 
-🔴 Drawbacks:
+The GBRT model’s green line almost perfectly follows actual load (black line), especially during test data—confirming it as our best model.
 
-Needs a lot of preprocessing and tuning.
+✅ Conclusion
+This project demonstrated how feature engineering, exploratory data analysis, and machine learning can be combined to build powerful load forecasting systems. Among all models, GBRT emerged as the most robust and accurate, making it ideal for real-world deployment in smart energy systems.
 
-Slower when working with large volumes of data.
 
-👉 Ideal when load doesn’t follow simple patterns.
 
-## 🌳 Random Forest – Simple Yet Powerful
-Random Forest isn’t a time series model by default, but with proper feature engineering (like lag values, day type, etc.), it can be quite effective for forecasting. It’s also less sensitive to noisy data.
 
-🟢 What I liked:
 
-Robust and flexible.
 
-Doesn’t overfit easily.
 
-🔴 Drawbacks:
-
-Doesn’t inherently understand sequence or time dependencies.
-
-Needs careful feature selection.
-
-👉 Works well with clean, structured input data and meaningful features.
-
-## 🧠 LSTM – The Deep Learning Powerhouse
-LSTM (Long Short-Term Memory) is a type of neural network designed for sequence data. It's capable of learning long-term dependencies in your data—perfect for when energy usage patterns are complicated or irregular.
-
-🟢 What I liked:
-
-Handles sequences and long-term trends well.
-
-Adapts to nonlinear and dynamic data.
-
-🔴 Drawbacks:
-
-Takes time and computing power to train.
-
-Not easy to interpret or explain.
-
-👉 Use it when you have plenty of data and want cutting-edge accuracy.
 
 
