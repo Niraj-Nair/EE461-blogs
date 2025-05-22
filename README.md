@@ -304,7 +304,7 @@ Histograms revealed the distribution of each feature — useful for deciding on 
 ⚙️ Introduction
 As energy systems become smarter and more dynamic, accurately predicting electrical load is crucial for efficiency and grid stability. In our EE461 project at USP, we explored load forecasting using feature engineering and three different machine learning models: Linear Regression (LR), Support Vector Regression (SVR), and Gradient Boosted Regression Trees (GBRT). Our goal was to forecast future power consumption based on smart meter time-series data.
 
-🧠 Feature Engineering
+## 🧠 Feature Engineering
 We engineered 16+ predictive features from raw voltage and current data including:
 
 Rolling RMS of current phases (L1, L2, L3)
@@ -319,12 +319,12 @@ Lag features of reactive power
 
 These features were visualized using scatter plots, box plots, and histograms to understand data distribution, outliers, and patterns.
 
-🔍 PCA & Correlation Analysis
+## 🔍 PCA & Correlation Analysis
 We used Principal Component Analysis (PCA) to reduce feature dimensionality. The first principal component alone explained 75% of the variance, highlighting strong correlation among features like CurrentL3, current_mean, and ActivePower.
 
 A correlation heatmap revealed which variables were strongly aligned. This helped us identify potential multicollinearity and focus on the most influential predictors.
 
-🧪 Model Training & Testing
+## 🧪 Model Training & Testing
 We trained the following models using a 70/30 train-test split:
 
 Linear Regression (LR)
@@ -335,7 +335,7 @@ Gradient Boosted Trees (GBRT)
 
 To evaluate performance, we used MAPE (Mean Absolute Percentage Error).
 
-📉 Results:
+## 📉 Results:
 Model	MAPE (%)
 LR	0.00
 SVR	44.51
@@ -347,7 +347,7 @@ SVR struggled with generalization in the test period, especially after Oct 2024.
 
 GBRT balanced accuracy and generalization, performing best overall.
 
-📊 Visual Insights
+## 📊 Visual Insights
 Figure 10–12: Plots show individual model predictions vs. actual load.
 
 Figure 13: A combined plot compared all models visually.
@@ -359,10 +359,57 @@ The GBRT model’s green line almost perfectly follows actual load (black line),
 ![gbrt ](https://github.com/user-attachments/assets/3aec48fa-207d-4474-9849-44e5a791476f)
 ![svr](https://github.com/user-attachments/assets/6000e89f-5113-4630-b783-b4033fbb2a7e)
 
+## week 11 and 12
+⚡ Redefining the Forecast: Corrected Models for Load Prediction
+In my initial approach to load forecasting, I applied smoothing techniques to the dataset before training the models. At the time, it seemed like a logical way to reduce noise and improve clarity. However, I later realized that this introduced bias and reduced the models’ ability to learn important fluctuations in the data — especially during peak loads and sudden transitions.
 
-✅ Conclusion
-This project demonstrated how feature engineering, exploratory data analysis, and machine learning can be combined to build powerful load forecasting systems. Among all models, GBRT and linear regression emerged as the most robust and accurate, making it ideal for real-world deployment in smart energy systems.
+These smoothing-based models produced forecasts that looked accurate visually but failed to generalize well during real-time testing. After identifying this issue, I decided to rebuild the models from scratch — this time without smoothing — using a clean, raw version of the data and proper preprocessing techniques.
 
+## 🧼 Step 1: Clean Data, No Smoothing
+This time, I focused on preserving the natural behavior of the data. I:
+
+Removed missing entries and zero-load rows
+
+Selected only meaningful numeric features (voltage, current, etc.)
+
+Applied z-score normalization (no smoothing filters) for consistency
+
+This ensured that the models trained on accurate, unaltered load behavior — improving their ability to generalize.
+
+## 🤖 Step 2: Training the Corrected Models
+With the clean data ready, I trained three core models:
+
+Linear Regression (LR):
+A fast and simple baseline model that captures linear trends.
+
+Gradient Boosted Regression Trees (GBRT):
+An ensemble method that builds a series of decision trees, learning from previous errors. It’s strong on complex data.
+
+Support Vector Regression (SVR):
+A kernel-based model that handles non-linear relationships well, particularly effective for time-series data.
+
+Each model was trained on 70% of the data, and predictions were made across the full dataset.
+
+## 📉 Step 3: Performance Evaluation
+I used Mean Absolute Percentage Error (MAPE) to evaluate how well each model performed:
+
+GBRT delivered the most accurate forecasts with the lowest MAPE.
+
+SVR handled fluctuations and trends well, with solid results.
+
+LR performed reasonably, but struggled with non-linear behavior.
+
+These corrected models far outperformed the earlier smoothed versions, especially in real-world test scenarios.
+
+## 🔍 Step 4: Zoomed Forecast Analysis
+To visualize accuracy, I zoomed in on a forecast window from September 1 to September 20, 2024. A red marker indicated the split between training and test data. This allowed me to clearly compare actual vs predicted load and see how each model handled unseen data.
+
+The corrected models captured patterns more sharply — especially GBRT, which aligned almost perfectly with actual usage.
+![all models](https://github.com/user-attachments/assets/d5dcf192-1dd2-439d-ab4c-766855e77666)
+![svr](https://github.com/user-attachments/assets/9ae4dcfb-6d91-4aa2-9a24-a66473dcd423)
+![gbrt](https://github.com/user-attachments/assets/b3e9ea65-a6ab-404b-843c-05836caba8a0)
+![lr](https://github.com/user-attachments/assets/50030c97-b3ab-456a-b69d-6bf90519f074)
+![zoomed models](https://github.com/user-attachments/assets/b8b8c47b-9511-49cd-972d-9040750166d6)
 
 
 
