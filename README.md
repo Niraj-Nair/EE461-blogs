@@ -502,8 +502,8 @@ After training, we evaluated the LSTM model's predictions on the test set and pl
 
 ## 📈 Performance Metrics:
 RMSE: 20.12
-
 MAE: 15.89
+
 ![lstm](https://github.com/user-attachments/assets/26fbdbde-b991-432a-92e3-1f6f688283c0)
 
 ## 📝 Closing Statement
