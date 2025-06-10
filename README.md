@@ -411,10 +411,98 @@ The corrected models captured patterns more sharply — especially GBRT, which a
 ![lr](https://github.com/user-attachments/assets/50030c97-b3ab-456a-b69d-6bf90519f074)
 ![zoomed models](https://github.com/user-attachments/assets/b8b8c47b-9511-49cd-972d-9040750166d6)
 
+### 📘 Project Blog Update – Week 13 & 14
+## 🔎 Week 13 Blog Update: Forecasting with Feedforward Neural Networks
+This week marked a major step forward in our journey toward accurate load forecasting using machine learning. We transitioned from data wrangling and exploratory analysis to implementing our first neural network model—a Feedforward Neural Network (FNN).
+
+## 🧠 Why Feedforward Neural Network?
+Feedforward NNs are the backbone of traditional machine learning models in the neural world. They are simple yet powerful when it comes to mapping complex nonlinear relationships—exactly what we needed to begin predicting active power demand from our feature-rich dataset sourced from a garment factory in Suva.
+
+## 🛠️ Step-by-Step Implementation
+📌 Feature Selection
+We handpicked a robust set of features from our cleaned dataset:
+
+Temporal patterns (day of week),
+
+Current & voltage stats (mean, std, imbalance),
+
+Rolling power values (to capture trend),
+
+Lag values (to learn short-term dependencies).
+
+These were carefully selected to feed into the neural network and give it context about the underlying load behavior.
+
+🧪 Data Preparation
+We structured the input features (X_all) and output targets (Y_all) as per MATLAB’s Neural Network Toolbox requirements (with transposed dimensions).
+
+We also applied a sequential time-based split:
+
+70% for training,
+
+15% for validation,
+
+15% held back as a hidden test set to assess real-world performance.
+
+## 🧰 Model Training via Neural Net Fitting App
+Using MATLAB’s nnstart, we launched the Neural Network Fitting App, configured a simple FNN (with 10 hidden neurons and default settings), and trained it on the selected dataset.
+
+📈 Evaluation & Results
+Once trained, we tested the model on the unseen test data.
+
+## 🔢 Evaluation Metrics:
+RMSE: Root Mean Square Error
+
+MAE: Mean Absolute Error
+
+MAPE: Mean Absolute Percentage Error
 
 
 
+![fnn](https://github.com/user-attachments/assets/e973822e-6dfc-48b2-97a4-79b74e7088af)
 
+### 🧠 Week 14 Blog Update: Time Series Forecasting with LSTM Networks
+Following our work with Feedforward Neural Networks last week, Week 14 was all about stepping into more advanced territory—LSTM (Long Short-Term Memory) networks—specifically designed for handling time-dependent data like electrical load patterns.
 
+LSTM networks are a type of recurrent neural network (RNN) that can remember patterns over long sequences, making them ideal for forecasting applications where past values influence future behavior.
 
+## 🔍 Why LSTM?
+Unlike FNNs that treat each data point independently, LSTMs retain memory of previous time steps. In our case, this allows the model to:
+
+Learn seasonal trends (e.g., weekday vs. weekend loads),
+
+Track load momentum over hours or days,
+
+Improve predictions for nonlinear and volatile demand.
+
+🛠️ How We Built It
+📅 Input Setup
+We used the same cleaned dataset, but this time reshaped it into sequences suitable for LSTM input. Each sample consisted of several time steps of features leading up to the current time, with the goal of predicting future active power demand.
+
+## ⚙️ Network Architecture
+Sequence Input Layer
+
+LSTM Layer (e.g., 50 hidden units)
+
+Fully Connected Layer
+
+Regression Output Layer
+
+This architecture was manually built using MATLAB's Deep Network Designer tool due to GUI limitations (e.g., missing regression layer by default). We used a workaround by forcing the addition of a regression output through code.
+
+🧪 Training
+We trained the model on sequential time windows using:
+
+80% training,
+
+20% testing,
+ensuring the temporal order was preserved (no random shuffling).
+
+## 📊 Results & Comparison
+After training, we evaluated the LSTM model's predictions on the test set and plotted Actual vs. Predicted Load over time.
+
+## 📈 Performance Metrics:
+RMSE: 20.12
+
+MAE: 15.89
+![lstm](https://github.com/user-attachments/assets/26fbdbde-b991-432a-92e3-1f6f688283c0)
 
