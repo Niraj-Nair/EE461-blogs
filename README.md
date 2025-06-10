@@ -39,7 +39,7 @@ ylabel('Active Power (kWh)');
 title('Scatter Plot of Active Power Over Time');
 grid on;
 ```
-## 🔌 Week 6: Visualizing Three-Phase Currents Over Time
+# 🔌 Week 6: Visualizing Three-Phase Currents Over Time
 
 These plots help us understand:
 - **How electrical load varies across all three phases**
@@ -298,7 +298,7 @@ Pairwise scatter plots showed strong linear relationships between power, current
 Boxplots highlighted value ranges and helped spot potential outliers
 
 Histograms revealed the distribution of each feature — useful for deciding on scaling or transformations
-## WEEK 9 and 10 Blog update
+# WEEK 9 and 10 Blog update
 
 🔋 Smarter Load Forecasting: How We Predicted Energy Demand Using ML
 ⚙️ Introduction
@@ -359,7 +359,7 @@ The GBRT model’s green line almost perfectly follows actual load (black line),
 ![gbrt ](https://github.com/user-attachments/assets/3aec48fa-207d-4474-9849-44e5a791476f)
 ![svr](https://github.com/user-attachments/assets/6000e89f-5113-4630-b783-b4033fbb2a7e)
 
-## week 11 and 12
+# 📘 WEEK 11 and 12 Blog update
 ⚡ Redefining the Forecast: Corrected Models for Load Prediction
 In my initial approach to load forecasting, I applied smoothing techniques to the dataset before training the models. At the time, it seemed like a logical way to reduce noise and improve clarity. However, I later realized that this introduced bias and reduced the models’ ability to learn important fluctuations in the data — especially during peak loads and sudden transitions.
 
@@ -411,7 +411,7 @@ The corrected models captured patterns more sharply — especially GBRT, which a
 ![lr](https://github.com/user-attachments/assets/50030c97-b3ab-456a-b69d-6bf90519f074)
 ![zoomed models](https://github.com/user-attachments/assets/b8b8c47b-9511-49cd-972d-9040750166d6)
 
-### 📘 Project Blog Update – Week 13 & 14
+# 📘 Project Blog Update – Week 13 & 14
 ## 🔎 Week 13 Blog Update: Forecasting with Feedforward Neural Networks
 This week marked a major step forward in our journey toward accurate load forecasting using machine learning. We transitioned from data wrangling and exploratory analysis to implementing our first neural network model—a Feedforward Neural Network (FNN).
 
@@ -460,7 +460,7 @@ MAPE: Mean Absolute Percentage Error
 
 ![fnn](https://github.com/user-attachments/assets/e973822e-6dfc-48b2-97a4-79b74e7088af)
 
-### 🧠 Week 14 Blog Update: Time Series Forecasting with LSTM Networks
+# 🧠 Week 14 Blog Update: Time Series Forecasting with LSTM Networks
 Following our work with Feedforward Neural Networks last week, Week 14 was all about stepping into more advanced territory—LSTM (Long Short-Term Memory) networks—specifically designed for handling time-dependent data like electrical load patterns.
 
 LSTM networks are a type of recurrent neural network (RNN) that can remember patterns over long sequences, making them ideal for forecasting applications where past values influence future behavior.
@@ -506,3 +506,11 @@ RMSE: 20.12
 MAE: 15.89
 ![lstm](https://github.com/user-attachments/assets/26fbdbde-b991-432a-92e3-1f6f688283c0)
 
+## 📝 Closing Statement
+This blog journey has been an insightful experience—transforming raw electrical load data into actionable forecasts using machine learning. From building a basic Feedforward Neural Network to implementing an LSTM capable of learning temporal patterns, each step has deepened our understanding of data-driven forecasting.
+
+As we wrap up, the key takeaway is clear: the right combination of features, model architecture, and evaluation can unlock powerful insights from complex datasets.
+
+While this marks the end of our blog updates, the foundation we’ve built opens the door to future improvements, optimizations, and real-world deployment.
+
+Thank you for following along! The learning continues beyond the blog. ⚡📈
